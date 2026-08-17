@@ -34,10 +34,15 @@ uvx --from suiflex-suitest-lifecycle suitest-mcp
 
 ## Zero-config setup: `init`
 
+:::caution
+**Run inside your specific project folder:** Do **not** run `init` or install the MCP server globally from your home directory. Always `cd` into the Frontend or Backend project directory you are testing so that configuration files (`suitest.config.json`, `.mcp.json`, etc.) are created in the right workspace context.
+:::
+
 The fastest way to wire everything up is `init`. Run it in the root of the
 project you want to test:
 
 ```bash
+cd path/to/your-project   # Frontend or Backend project root
 npx -y @suiflex/suitest-mcp init
 ```
 

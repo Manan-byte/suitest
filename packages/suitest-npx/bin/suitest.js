@@ -5,6 +5,10 @@ const { parseArgs } = require("node:util");
 
 const USAGE = `Usage: suitest <command> [options]
 
+Important:
+  Do NOT install or run Suitest globally. Always run commands inside the
+  specific Frontend or Backend project directory you want to test.
+
 Commands:
   onboard   provision runtime + boot local stack + wire IDE MCP config
   up        boot local stack (API + supervisor + dashboard)

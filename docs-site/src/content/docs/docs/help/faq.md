@@ -9,7 +9,11 @@ Yes. Suitest is open source under the Apache-2.0 license and designed to be self
 
 ## What is the fastest way to try Suitest?
 
-`npx @suiflex/suitest onboard` — one command boots the full platform on your laptop (web dashboard, API on SQLite, run supervisor) and wires your IDE's MCP config. No Docker, no LLM key. See [Local bundle](/docs/install/local-bundle/). If you only want agent-generated tests without a dashboard, `npx -y @suiflex/suitest-mcp init` is lighter; for a team server use [Docker Compose](/docs/install/docker/).
+`npx @suiflex/suitest onboard` — navigate to your target project folder (FE or BE) and run this one command to boot the full platform on your laptop (web dashboard, API on SQLite, run supervisor) and wire your IDE's MCP config. No Docker, no LLM key. See [Local bundle](/docs/install/local-bundle/). If you only want agent-generated tests without a dashboard, `npx -y @suiflex/suitest-mcp init` is lighter; for a team server use [Docker Compose](/docs/install/docker/).
+
+## Should I install or run Suitest globally?
+
+No. Suitest is designed to be scoped per-project. Do **NOT** install it globally with `npm install -g` and do not run setup commands from your root home directory (`~`). Always navigate (`cd`) into the specific Frontend or Backend repository/directory you want to test before running `suitest onboard` or `suitest-mcp init`.
 
 ## Do I need an LLM API key?
 

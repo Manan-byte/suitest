@@ -5,14 +5,14 @@ const tabs = [
   {
     id: "bundle",
     label: "One command",
-    note: "Full local platform: web dashboard + SQLite + IDE MCP wiring. No Docker, no cloud, no LLM key. Node 18+ and uv.",
-    code: `npx @suiflex/suitest onboard`,
+    note: "Run inside your Frontend or Backend project directory (not globally). Web dashboard + SQLite + IDE MCP wiring. Node 18+ and uv.",
+    code: `cd path/to/your-project\nnpx @suiflex/suitest onboard`,
   },
   {
     id: "mcp",
     label: "MCP server only",
-    note: "Detects your IDE and framework, writes suitest.config.json, and registers the MCP server. Restart the IDE and prompt the agent. Node 18+, Python 3.11+.",
-    code: `npx @suiflex/suitest-mcp init`,
+    note: "Run inside your target FE/BE project directory. Detects framework, writes suitest.config.json, and registers the MCP server. Node 18+, Python 3.11+.",
+    code: `cd path/to/your-project\nnpx @suiflex/suitest-mcp init`,
   },
   {
     id: "docker",

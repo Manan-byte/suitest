@@ -21,11 +21,16 @@ server; you can add a platform later and reconnect with one command.
 
 ## Route 1: MCP server in your IDE
 
+:::important
+**Important:** Do **not** install or configure Suitest globally. Always `cd` into your target Frontend (e.g. `frontend/`) or Backend (e.g. `backend/`) project directory first.
+:::
+
 ### 1. Run init
 
 In the root of the project you want to test:
 
 ```bash
+cd path/to/your-project   # e.g. frontend or backend directory
 npx -y @suiflex/suitest-mcp init
 ```
 

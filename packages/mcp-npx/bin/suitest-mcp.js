@@ -35,6 +35,10 @@ function printHelp() {
     [
       "suitest-mcp — Suitest MCP server (stdio) + installer",
       "",
+      "Important:",
+      "  Do NOT install or run Suitest globally (e.g. npm i -g). Always run",
+      "  inside the specific Frontend or Backend project directory you want to test.",
+      "",
       "Usage:",
       "  npx @suiflex/suitest-mcp                    start the MCP server (default)",
       "  npx @suiflex/suitest-mcp mcp                same, explicit",

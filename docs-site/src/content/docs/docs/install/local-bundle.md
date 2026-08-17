@@ -8,7 +8,12 @@ API on SQLite, a run supervisor, and your IDE's MCP config — wired together
 by a single command. No Docker, no Postgres, no S3, no LLM API key (test
 generation uses MCP sampling through your IDE agent).
 
+:::caution
+**Do not install or run globally:** Suitest is scoped per project. Never run `npm install -g @suiflex/suitest` or run `suitest onboard` from your root user home directory. Always `cd` into the specific Frontend (e.g. `frontend/`) or Backend (e.g. `backend/`) project directory you want to test before running `onboard`.
+:::
+
 ```bash
+cd path/to/your-project   # Frontend or Backend project directory
 npx @suiflex/suitest onboard
 ```
 

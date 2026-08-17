@@ -9,6 +9,7 @@
  * writer at the resolved config path via the client's path-override env var.
  */
 
+const os = require("node:os");
 const path = require("node:path");
 const readline = require("node:readline/promises");
 
@@ -56,6 +57,20 @@ function writeMcpEntry(target, cwd, env) {
 
 async function runInit(opts) {
   const cwd = opts.cwd || process.cwd();
+  const resolvedCwd = path.resolve(cwd);
+  const homeDir = path.resolve(os.homedir());
+  const rootDir = path.parse(resolvedCwd).root;
+  if (resolvedCwd === homeDir || resolvedCwd === rootDir) {
+    console.warn(
+      "\n⚠️  [Suitest Scope Warning] You are running init in your user home or root directory.",
+    );
+    console.warn(
+      "   Do NOT configure Suitest globally. Please 'cd' into the specific Frontend or",
+    );
+    console.warn(
+      "   Backend project directory you want to test before running init.\n",
+    );
+  }
 
   // 1. IDE
   let ide = opts.ide;

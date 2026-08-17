@@ -17,7 +17,10 @@ no LLM key required.
 
 ## Quickstart
 
+> **Scope Notice:** Do **NOT** install or configure Suitest globally across your machine. Always navigate into the specific target project directory (Frontend or Backend folder) you want to test before running `init`:
+
 ```bash
+cd path/to/your-project   # e.g. frontend or backend
 npx -y @suiflex/suitest-mcp init
 ```
 

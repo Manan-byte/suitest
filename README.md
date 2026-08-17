@@ -85,13 +85,19 @@ The launcher rebuilds its Python venv whenever its version changes, so re-runnin
 
 ## Install
 
+> [!IMPORTANT]
+> **Project Scope Notice:** Do **NOT** install or run Suitest globally (e.g. `npm install -g` or from your home directory). Always navigate to the specific project directory (e.g. your Frontend folder `apps/web`/`frontend` or Backend folder `apps/api`/`backend`) containing the code and tests you want to execute before running setup commands.
+
 Five supported paths.
 
 ### 1. Local bundle — one command (recommended quickstart)
 
+Navigate to your target project folder (FE or BE) and run:
+
 Requirements: **Node ≥ 18** and [uv](https://docs.astral.sh/uv/).
 
 ```bash
+cd path/to/your-project   # e.g. frontend or backend directory
 npx @suiflex/suitest onboard
 ```
 

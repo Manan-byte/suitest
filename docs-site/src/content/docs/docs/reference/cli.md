@@ -19,6 +19,10 @@ Both Python packages register a `suitest` console script. Whichever package is i
 
 The npm launcher. Requires Node.js >= 18 and Python >= 3.11 on `PATH` (override the interpreter with `SUITEST_PYTHON=/path/to/python`). The MCP server itself is bundled, stdlib-only Python; nothing is pip-installed.
 
+:::note
+**Scope requirement:** Run these commands inside your target Frontend or Backend project root (e.g. `cd path/to/your-project`), never globally or in your root home directory.
+:::
+
 ```bash
 npx -y @suiflex/suitest-mcp                    # start the stdio MCP server (default)
 npx -y @suiflex/suitest-mcp mcp                # same, explicit subcommand

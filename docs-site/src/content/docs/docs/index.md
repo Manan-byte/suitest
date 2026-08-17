@@ -20,11 +20,16 @@ Suitest is a self-hostable, open-source QA platform (Apache-2.0, pre-v1.0). It w
 
 ## Choose your path
 
+:::important
+**Important Scope Notice:** Do **NOT** install or configure Suitest globally across your machine. Always run commands inside the specific target project directory (such as your Frontend or Backend directory) you want to test.
+:::
+
 ### I want everything on my laptop (one command)
 
-The recommended solo-dev quickstart: web dashboard, API on SQLite, run supervisor, and your IDE's MCP config — no Docker, no LLM key.
+The recommended solo-dev quickstart: web dashboard, API on SQLite, run supervisor, and your IDE's MCP config — no Docker, no LLM key. Run in your target project directory:
 
 ```bash
+cd path/to/your-project   # FE or BE project root
 npx @suiflex/suitest onboard
 ```
 
@@ -33,9 +38,10 @@ npx @suiflex/suitest onboard
 
 ### I want to test from my IDE (MCP server only)
 
-The lightest route: connect your coding agent to Suitest in one command. No platform install, results stay on disk.
+The lightest route: connect your coding agent to Suitest in one command. No platform install, results stay on disk. Run in your target project directory:
 
 ```bash
+cd path/to/your-project   # FE or BE project root
 npx -y @suiflex/suitest-mcp init
 ```
 

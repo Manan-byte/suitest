@@ -109,8 +109,21 @@ async function resolvePort(dirs, opts) {
 }
 
 async function onboard(cwd, opts = {}) {
-  console.log(loadMcpLib("theme.js").banner());
+  const theme = loadMcpLib("theme.js");
+  console.log(theme.banner());
   console.log("");
+  const resolvedCwd = path.resolve(cwd);
+  const homeDir = path.resolve(require("node:os").homedir());
+  const rootDir = path.parse(resolvedCwd).root;
+  if (resolvedCwd === homeDir || resolvedCwd === rootDir) {
+    console.warn(
+      theme.point(
+        "Scope notice: Do NOT run Suitest globally. Always run inside your specific Frontend or Backend project folder.",
+        { color: theme.violet },
+      ),
+    );
+    console.log("");
+  }
   const { dirs, webDist, python } = await prepare(cwd);
   await promptAccount(dirs.credentials, opts);
   const port = await resolvePort(dirs, opts);
@@ -132,12 +145,10 @@ async function onboard(cwd, opts = {}) {
     });
     mcpConfigPath = result.mcpConfigPath;
   } catch (err) {
-    // Stack is already up — don't fail onboarding because IDE detection missed.
     console.error(`MCP wiring skipped: ${err.message}`);
     console.error("Re-run later: suitest init --ide <claude-code|cursor|windsurf>");
   }
 
-  const theme = loadMcpLib("theme.js");
   console.log("");
   console.log(
     theme.panel(

@@ -212,11 +212,7 @@ export function ConnectIdeDialog(): React.ReactElement {
             <div className="mt-2 flex items-start gap-1.5 rounded-md border border-amber/25 bg-amber/[0.06] px-2.5 py-2 text-[11.5px] text-amber">
               <AlertTriangle className="mt-[1px] h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               <span className="text-fg-2">
-                Requires <code className="font-mono text-[11px] text-fg-1">Node ≥ 18</code>. Python
-                is auto-provisioned via{" "}
-                <code className="font-mono text-[11px] text-fg-1">uv</code> — or point{" "}
-                <code className="font-mono text-[11px] text-fg-1">SUITEST_PYTHON</code> at an
-                existing interpreter.
+                <strong>Project scope:</strong> Do not install globally (<code className="font-mono text-[11px] text-fg-1">npm i -g</code>). Always run commands inside the specific Frontend or Backend project directory you want to test. Requires <code className="font-mono text-[11px] text-fg-1">Node ≥ 18</code> and <code className="font-mono text-[11px] text-fg-1">Python ≥ 3.11</code>.
               </span>
             </div>
           </StepShell>

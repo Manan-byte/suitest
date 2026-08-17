@@ -3,13 +3,14 @@
 One command runs the full Suitest stack locally — web dashboard + SQLite +
 MCP — no Docker, no cloud services, no LLM API key (MCP sampling).
 
-## Install
+> **Scope Notice:** Do **NOT** install or run Suitest globally across your system. Always run Suitest inside the specific target project directory (Frontend or Backend) you want to test.
+
+## Quickstart
+
+Navigate to your target project folder (e.g. your Frontend or Backend directory):
 
 ```bash
-# with Node >= 18
-npm i -g @suiflex/suitest && suitest onboard
-
-# or try without installing
+cd path/to/your-project
 npx @suiflex/suitest onboard
 ```
 
