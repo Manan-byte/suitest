@@ -272,8 +272,16 @@ describe("Test Cases screen", () => {
 
     prioritySelect.focus();
     expect(prioritySelect).toHaveFocus();
-  });
 
+    // Verify responsive layout styling that prevents clipping on narrow widths
+    expect(bar).toHaveClass("flex-col");
+    const actionContainer = runBtn.parentElement;
+    expect(actionContainer).toHaveClass("flex-wrap");
+    expect(moveSelect).toHaveClass("min-w-0");
+    expect(moveSelect).toHaveClass("max-w-full");
+    expect(prioritySelect).toHaveClass("min-w-0");
+    expect(prioritySelect).toHaveClass("max-w-full");
+  });
 
   it("suite selection: renders a checkbox for each suite in the tree", async () => {
     renderCases();
@@ -887,5 +895,3 @@ describe("Test Cases screen", () => {
     });
   });
 });
-
-
